@@ -30,13 +30,6 @@ def set_last_heartbeat(ts: str):
     headers = {"Authorization": f"Bearer {GITHUB_TOKEN}", "Accept": "application/vnd.github+json"}
     requests.patch(url, headers=headers, json={"name": LAST_HEARTBEAT_VAR, "value": ts})
 
-# this is the block 
-def set_last_heartbeat(ts: str):
-    url = f"https://api.github.com/repos/{GITHUB_REPO}/actions/variables/{LAST_HEARTBEAT_VAR}"
-    headers = {"Authorization": f"Bearer {GITHUB_TOKEN}", "Accept": "application/vnd.github+json"}
-    r = requests.patch(url, headers=headers, json={"name": LAST_HEARTBEAT_VAR, "value": ts})
-    print(f"set_last_heartbeat status: {r.status_code}, body: {r.text}")
-
 def check_heartbeat():
     now = datetime.now(timezone.utc)
     last = get_last_heartbeat()
