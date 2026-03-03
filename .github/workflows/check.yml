@@ -25,4 +25,5 @@ jobs:
       - name: Run checker
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python checker.py
