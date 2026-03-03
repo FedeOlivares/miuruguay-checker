@@ -4,7 +4,7 @@ from playwright.async_api import async_playwright
 import requests
 
 URL = "https://miuruguay.com.uy/categoria-producto/outlet/"
-SEARCH_STRING = "Jarra eléctrica"
+SEARCH_STRING = "redmi buds 5"
 
 DISCORD_WEBHOOK = os.getenv("DISCORD_WEBHOOK")
 
