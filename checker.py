@@ -36,7 +36,7 @@ def check_heartbeat():
     if last:
         last_dt = datetime.fromisoformat(last)
         diff = (now - last_dt).total_seconds()
-        if diff < 60:  # 24 hours
+        if diff < 86400:  # 24 hours
             return
     send_discord("✅ Outlet checker is alive and running.")
     set_last_heartbeat(now.isoformat())
