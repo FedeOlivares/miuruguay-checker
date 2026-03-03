@@ -21,7 +21,7 @@ def get_last_heartbeat():
     url = f"https://api.github.com/repos/{GITHUB_REPO}/actions/variables/{LAST_HEARTBEAT_VAR}"
     headers = {"Authorization": f"Bearer {GITHUB_TOKEN}", "Accept": "application/vnd.github+json"}
     r = requests.get(url, headers=headers)
-    if r.status_code == 200:
+    if r.status_code // 100 == 200:
         return r.json().get("value")
     return None
 
