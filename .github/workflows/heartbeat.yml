@@ -1,0 +1,17 @@
+name: Heartbeat
+on:
+  schedule:
+    - cron: '0 12 * * *'  # once daily at noon UTC
+  workflow_dispatch:
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send heartbeat
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          curl -X POST "$DISCORD_WEBHOOK" \
+            -H "Content-Type: application/json" \
+            -d '{"content": "✅ Outlet checker is running fine."}'
