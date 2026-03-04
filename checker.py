@@ -5,7 +5,7 @@ from playwright.async_api import async_playwright
 import requests
 
 URL = "https://miuruguay.com.uy/categoria-producto/outlet/"
-SEARCH_STRING = "Pad 7 8GB"
+SEARCH_STRING = "openwear"
 DISCORD_WEBHOOK = os.getenv("DISCORD_WEBHOOK")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GITHUB_REPO = os.getenv("GITHUB_REPOSITORY")  # auto-provided by Actions
