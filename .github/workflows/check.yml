@@ -2,7 +2,7 @@ name: MiUruguay Outlet Checker
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/20 * * * *'
   workflow_dispatch:
   
 jobs:
